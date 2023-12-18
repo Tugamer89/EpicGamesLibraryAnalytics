@@ -26,6 +26,9 @@ A Python script that makes it easy to analyze the receipts received from Epic Ga
     - Generates insightful plots based on the extracted data (`plotter.py`).
 3. Find the results in the `output.csv` file and the generated plots in the `images` folder.
 
+### Examples
+You can find examples of the generated plots in the images folder of this repository.
+
 ## Additional Details
 - `emailToCsv.py`: Processes Epic Games emails, extracts HTML content, and converts it into a CSV file (output.csv).
 - `priceFixer.py`: Fixes and updates prices using web scraping and Google search queries. Please note that this process might take a considerable amount of time as it involves making one or two requests to Google for games with null prices (e.g., free games or games without the price in the receipt). Note: Be mindful of potential rate limiting or restrictions imposed by Google on automated queries.
