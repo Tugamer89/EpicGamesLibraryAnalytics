@@ -27,7 +27,7 @@ A Python script that makes it easy to analyze the receipts received from Epic Ga
 3. Find the results in the `output.csv` file and the generated plots in the `images` folder.
 
 ### Examples
-You can find examples of the generated plots in the images folder of this repository.
+You can find examples of the generated plots in the `images` folder of this repository.
 
 ## Additional Details
 - `emailToCsv.py`: Processes Epic Games emails, extracts HTML content, and converts it into a CSV file (output.csv).
