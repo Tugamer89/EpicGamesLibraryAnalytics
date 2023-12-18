@@ -6,7 +6,7 @@ A Python script that makes it easy to analyze the receipts received from Epic Ga
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/tuononen/epic-games-data-analyzer.git
+   git clone https://github.com/Tugamer89/EpicGamesLibraryAnalytics.git
    cd epic-games-data-analyzer
    ```
 2. Install the required dependencies:
