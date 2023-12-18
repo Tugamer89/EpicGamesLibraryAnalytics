@@ -15,7 +15,7 @@ A Python script that makes it easy to analyze the receipts received from Epic Ga
     ```
 
 ## Usage
-1. Place your Epic Games receipts emails (.eml files) in the emls folder.
+1. Place your Epic Games receipts emails (.eml files) in the `emls` folder.
 2. Run the `runner.py` script:
     ```bash
     python runner.py
@@ -24,8 +24,7 @@ A Python script that makes it easy to analyze the receipts received from Epic Ga
     - Extracts receipts and data from emails (`emailToCsv.py`).
     - Calculates the price and creates multiple CSV files (`priceFixer.py`).
     - Generates insightful plots based on the extracted data (`plotter.py`).
-    - Find the results in the output.csv file and the generated plots in the `images` folder.
-3. Find the results in the `output.csv` file and the generated plots in the images folder.
+3. Find the results in the `output.csv` file and the generated plots in the `images` folder.
 
 ## Additional Details
 - `emailToCsv.py`: Processes Epic Games emails, extracts HTML content, and converts it into a CSV file (output.csv).
