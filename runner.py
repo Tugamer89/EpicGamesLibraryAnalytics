@@ -1,15 +1,15 @@
 import os
 import shutil
 
-def main(n=5):
+def main(n=10):
     print('\nExtracting receipts & data from emails...')
     os.system("python emailToCsv.py")
 
     print("\nCalculating price...")
     for i in range(n):
-        os.system(f"python priceFixer.py")
-        shutil.move("output.csv", f"output-{i}.csv")
-        shutil.move("new_output.csv", "output.csv")
+        os.system("python priceFixer.py" + ' last' if i == n-1 else '')
+        if os.path.exists("new_output.csv"):
+            shutil.move("new_output.csv", "output.csv")
 
     print('\nPlotting data...')
     os.system("python plotter.py")

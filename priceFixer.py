@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import csv
 import time
 import requests
@@ -91,6 +92,8 @@ def update_price(row):
 
 
 if __name__ == "__main__":
+    use_freeGamesList = len(sys.argv) > 1
+
     if not os.path.exists("./pages"):
         os.makedirs("./pages")
 
@@ -98,8 +101,18 @@ if __name__ == "__main__":
         reader = csv.DictReader(input_file)
         rows = list(reader)
 
+    freeGames = []
+    if use_freeGamesList and os.path.exists("freeGames-list.txt"):
+        with open("freeGames-list.txt", 'r') as file:
+            freeGames = [line.strip() for line in file.readlines() if line.strip()]
+
     for row in rows:
+        if row['Description'] in freeGames:
+            continue
         row['Price'] = update_price(row)
+        if use_freeGamesList and row['Price'] == '0.00':
+            with open("freeGames-list.txt", 'a') as file:
+                file.write(row['Description'] + '\n')
 
     fieldnames = reader.fieldnames
     with open('new_output.csv', 'w', newline='') as output_file:
