@@ -1,7 +1,6 @@
 import os
 import re
 import csv
-import email
 from email import policy
 from bs4 import BeautifulSoup
 from email.parser import BytesParser
@@ -47,6 +46,8 @@ def parse_new_html(file_path):
         soup = BeautifulSoup(file, 'html.parser')
 
         order_info_div = soup.select_one('table[style="width: 100%;word-wrap:break-word;overflow-wrap:break-word;word-break:break-word;font-size:16px;line-height:24px;border-spacing:0;margin-bottom:20px;border-top:1px solid #e2e3e4;"]')
+        if order_info_div is None:
+            order_info_div = soup.select_one('table[style="width: 100%;font-size:16px;line-height:24px;border-spacing:0;margin-bottom:20px;border-top:1px solid #e2e3e4;"]')
         order_info_div_rows = order_info_div.find_all('tr')
         order_id = order_info_div_rows[2].find_all('td')[0].text.strip()
         order_date = order_info_div_rows[4].find_all('td')[0].text.strip()
